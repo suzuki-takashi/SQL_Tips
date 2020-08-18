@@ -4,12 +4,12 @@ SQL Tips集
 
 ※ご自由にお使い下さい。
 
-#### [・LEFT JOINの使い方](#LEFTJOINの使い方)
+#### [・LEFT JOINの使い方](#LEFT JOINの使い方)
 
 
 
 
-### LEFTJOINの使い方
+### LEFT JOINの使い方
     SELECT A.NRJYUTYU,A.NRHINMOKU,B.TXHINBAN,B.TXHINMEI,A.QTJYUTYU'
     FROM JTMS A'
     LEFT JOIN HINMOKU B'
