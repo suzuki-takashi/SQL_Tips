@@ -4,6 +4,11 @@ SQL Tips
 ## Overview  
 実際の開発で使ったＳＱＬを基に作ったＴｉｐｓ集です。  
 
+## SampleDB
+[environment]にあるSQLを使ってSampleDBを作ると、動作確認できます。
+
+[environment]: https://github.com/suzuki-takashi/SQL_Tips/tree/master/environment
+
 ## Table of contents
 
 #### [・LEFT JOINの使い方](#LEFTJOINの使い方)
