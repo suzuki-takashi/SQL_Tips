@@ -17,7 +17,7 @@ SQL Tips集
       JTMS A
     LEFT JOIN HINMOKU B
       ON A.NRHINMOKU = B.NRHINMOKU
-    AND 300 >= B.PRHANBAI --この条件は結合条件です
+      AND 300 >= B.PRHANBAI --この条件は結合条件です
     
     [悪い例]
     SELECT A.NRJYUTYU,A.NRHINMOKU,B.TXHINBAN,B.TXHINMEI,A.QTJYUTYU
@@ -26,7 +26,7 @@ SQL Tips集
     LEFT JOIN HINMOKU B
       ON A.NRHINMOKU = B.NRHINMOKU
     WHERE
-      300 >= B.PRHANBAI --抽出条件に書いてはいけない
+      300 >= B.PRHANBAI --結合条件を抽出条件に書いてはいけない
 
 
  
