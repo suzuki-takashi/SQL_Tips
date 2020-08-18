@@ -1,15 +1,16 @@
-SQL Tips集
+SQL Tips
 ======================
+
+## Overview  
 実際の開発で使ったＳＱＬを基に作ったＴｉｐｓ集です。  
 
-※ご自由にお使い下さい。
+## Table of contents
 
 #### [・LEFT JOINの使い方](#LEFTJOINの使い方)
 
+## Tips
 
-
-
-## LEFTJOINの使い方
+### LEFTJOINの使い方
     [良い例]
     SELECT A.NRJYUTYU,A.NRHINMOKU,B.TXHINBAN,B.TXHINMEI,A.QTJYUTYU
     FROM
@@ -29,15 +30,16 @@ SQL Tips集
 
 
  
-関連情報
---------
+Note
+-------
 
-無し
-  
-  
-ライセンス
+
+Authors
 ----------
 Copyright &copy; [IT & Strategy](http://suzukitakashi.net/)  
+  
+License
+----------
 Distributed under the [MIT License][mit].
  
 [MIT]: http://www.opensource.org/licenses/mit-license.php
