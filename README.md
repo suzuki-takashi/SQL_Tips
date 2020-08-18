@@ -34,10 +34,18 @@ SQL Tips
       300 >= B.PRHANBAI --結合条件を抽出条件に書いてはいけない
 
 
- 
+
 Note
 -------
 
+References
+-------
+
+
+Contributing
+-------
+Pull requests are welcome!!  
+Or If you find issues, please send it!!
 
 Authors
 ----------
