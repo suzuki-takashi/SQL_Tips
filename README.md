@@ -33,8 +33,8 @@ SQL Tips
       ON A.NRHINMOKU = B.NRHINMOKU
     WHERE
       300 >= B.PRHANBAI --結合条件を抽出条件に書いてはいけない
-      
-      
+
+
 #### ランダムに行を取得する
     SELECT A.*
     FROM
