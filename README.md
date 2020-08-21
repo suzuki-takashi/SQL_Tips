@@ -11,8 +11,8 @@ SQL Tips
 
 ## Table of contents
 
-#### [・LEFT JOINの使い方](#left-joinの使い方)
-#### [・ランダムに行を取得する](#ランダムに行を取得する)
+#### [・LEFT JOINの使い方](#left-joinの使い方-1)
+#### [・ランダムに行を取得する](#ランダムに行を取得する-1)
 
 ## Tips
 
