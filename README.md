@@ -11,31 +11,12 @@ SQL Tips
 
 ## Table of contents
 
-#### [・LEFT JOINの使い方](#left-joinの使い方-1)
+#### [・LEFT JOINの使い方]
 #### [・ランダムに行を取得する]
 
+
+[・LEFT JOINの使い方]:https://gist.github.com/suzuki-takashi/ad5b74ea43e251b72adbf1e7ad6e85a4
 [・ランダムに行を取得する]:https://gist.github.com/suzuki-takashi/01566e91aed8e742a7f8cf10114c0cf6
-
-## Tips
-
-#### LEFT JOINの使い方
-    [良い例]
-    SELECT A.NRJYUTYU,A.NRHINMOKU,B.TXHINBAN,B.TXHINMEI,A.QTJYUTYU
-    FROM
-      JTMS A
-    LEFT JOIN HINMOKU B
-      ON A.NRHINMOKU = B.NRHINMOKU
-      AND 300 >= B.PRHANBAI --この条件は結合条件です
-    
-    [悪い例]
-    SELECT A.NRJYUTYU,A.NRHINMOKU,B.TXHINBAN,B.TXHINMEI,A.QTJYUTYU
-    FROM
-      JTMS A
-    LEFT JOIN HINMOKU B
-      ON A.NRHINMOKU = B.NRHINMOKU
-    WHERE
-      300 >= B.PRHANBAI --結合条件を抽出条件に書いてはいけない
-
 
 
 Note
