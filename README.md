@@ -14,7 +14,7 @@ SQL Tips
 #### [・LEFT JOINの使い方](#left-joinの使い方-1)
 #### [・ランダムに行を取得する]
 
-[・ランダムに行を取得する]:https://gist.github.com/suzuki-takashi/01566e91aed8e742a7f8cf10114c0cf6.js
+[・ランダムに行を取得する]:https://gist.github.com/suzuki-takashi/01566e91aed8e742a7f8cf10114c0cf6
 
 ## Tips
 
