@@ -12,6 +12,7 @@ SQL Tips
 ## Table of contents
 
 #### [・LEFT JOINの使い方](#LEFTJOINの使い方)
+#### [・ランダムに行を取得する](#ランダムに行を取得する)
 
 ## Tips
 
@@ -32,6 +33,20 @@ SQL Tips
       ON A.NRHINMOKU = B.NRHINMOKU
     WHERE
       300 >= B.PRHANBAI --結合条件を抽出条件に書いてはいけない
+      
+      
+#### ランダムに行を取得する
+    SELECT A.*
+    FROM
+      jtmd AS A
+    INNER JOIN (
+        SELECT  ROW_NUMBER() OVER (ORDER BY NRJYUTYU ) AS ROWNUM 
+	           ,NRJYUTYU
+        FROM
+          jtmd
+	    ) AS B
+      ON A.NRJYUTYU = B.NRJYUTYU
+      AND B.ROWNUM = (SELECT CEIL(RANDOM() * COUNT(NRJYUTYU)) FROM jtmd )
 
 
 
