@@ -12,7 +12,9 @@ SQL Tips
 ## Table of contents
 
 #### [・LEFT JOINの使い方](#left-joinの使い方-1)
-#### [・ランダムに行を取得する](#ランダムに行を取得する-1)
+#### [・ランダムに行を取得する]
+
+[・ランダムに行を取得する]:https://gist.github.com/suzuki-takashi/01566e91aed8e742a7f8cf10114c0cf6.js
 
 ## Tips
 
