@@ -11,12 +11,12 @@ SQL Tips
 
 ## Table of contents
 
-#### [・LEFT JOINの使い方](#LEFTJOINの使い方)
+#### [・LEFT JOINの使い方](#left-joinの使い方)
 #### [・ランダムに行を取得する](#ランダムに行を取得する)
 
 ## Tips
 
-#### LEFTJOINの使い方
+#### LEFT JOINの使い方
     [良い例]
     SELECT A.NRJYUTYU,A.NRHINMOKU,B.TXHINBAN,B.TXHINMEI,A.QTJYUTYU
     FROM
