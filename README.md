@@ -39,13 +39,13 @@ SQL Tips
     FROM
       jtmd AS A
     INNER JOIN (
-        SELECT  ROW_NUMBER() OVER (ORDER BY NRJYUTYU ) AS ROWNUM 
-	           ,NRJYUTYU
+        SELECT  ROW_NUMBER() OVER (ORDER BY NRJYUTYU ) AS ROWNUM --主キー順に番号を振る
+	       ,NRJYUTYU
         FROM
           jtmd
 	    ) AS B
-      ON A.NRJYUTYU = B.NRJYUTYU
-      AND B.ROWNUM = (SELECT CEIL(RANDOM() * COUNT(NRJYUTYU)) FROM jtmd )
+      ON   A.NRJYUTYU = B.NRJYUTYU
+      AND (SELECT CEIL(RANDOM() * COUNT(NRJYUTYU)) FROM jtmd ) = B.ROWNUM --主キーからランダムに選ぶ
 
 
 
