@@ -57,7 +57,7 @@
 　　悪い例：order by 1 , 2  
 　　良い例：order by COLUMN1,COLUMN2  
 
-
+    【サンプル】
     select
        COLUMN1
       ,COLUMN2
@@ -93,6 +93,7 @@
 
 
 #### ＩＮＳＥＲＴ
+    【サンプル】
     insert into
       TABLE01
     (
@@ -110,6 +111,7 @@
 
 
 #### ＵＰＤＡＴＥ 
+    【サンプル】
     UPDATE
       TABLE01 AS TB1
     SET
@@ -122,6 +124,7 @@
 
 
 #### ＤＥＬＥＴＥ
+    【サンプル】
     DELETE
     FROM
       TABLE01 AS TB1
