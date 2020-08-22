@@ -44,7 +44,7 @@
 　　　例：select A from B where A='1'  
 ・全列ワイルドカード * （アスタリスク）の使用はせず、カラム名を明記する。  
 ・別名を定義するときはASをつける。  
-　　例：COLUMN1 AS 列名  
+　　　例：COLUMN1 AS 列名  
 ・FROMには複数のテーブル名を並べない。JOINを使う。  
 　　悪い例：from TABLE01,TABLE02  
 　　良い例：from TABLE01  
