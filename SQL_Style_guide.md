@@ -10,158 +10,112 @@
 
 
 ## 命名規約
-・名前には英字、数字、アンダースコアのみを使用する。
-・名前はアンダースコアでは終わらない。
-・複数の連続したアンダースコアの使用を避ける。読取るのが難しくなるため。
-・名前にスペースを含めるのが自然な場合は、アンダースコアを使用する。（first nameはfirst_name）
+・名前には英字、数字、アンダースコアのみを使用する。  
+・名前はアンダースコアでは終わらない。  
+・複数の連続したアンダースコアの使用を避ける。読取るのが難しくなるため。  
+・名前にスペースを含めるのが自然な場合は、アンダースコアを使用する。（first nameはfirst_name）  
 
 
 
 ## フォーマット規約
-・タブを使わず、スペースを使う。
-・インデントは2スペース（4スペースでも良い）
-・予約語も含めて原則小文字で書く。
-　　理由：大文字か小文字かで迷ったりレビューで指摘するのがムダに思えるためです。
-・項目名を並べるときは、カンマを先頭にする。（1行変更1行追加となってしまってどうも嫌だったので、1行追加で済む今の形が気に入っています。）
-・文末のセミコロンは改行して書く。（カンマと同じ理由）
-・コメントは”--”で書く。/* */は使わない。（理由：grep検索したときに、一見して生きているかどうかわかるため）
+・タブを使わず、スペースを使う。  
+・インデントは2スペース（4スペースでも良い）  
+・予約語も含めて原則小文字で書く。  
+　　理由：大文字か小文字かで迷ったりレビューで指摘するのがムダに思えるためです。  
+・項目名を並べるときは、カンマを先頭にする。（1行変更1行追加となってしまってどうも嫌だったので、1行追加で済む今の形が気に入っています。）  
+・文末のセミコロンは改行して書く。（カンマと同じ理由）  
+・コメントは”--”で書く。/* */は使わない。（理由：grep検索したときに、一見して生きているかどうかわかるため）  
 
-【SELECT】
-・SELECTは全体がごく短い場合は１行で書いても良い。
-　　例：select A from B where A='1'
-・全列ワイルドカード「*」の使用はせず、カラム名を明記する
-・別名を定義するときはASをつける。
-・FROMには複数のテーブル名を並べない。JOINを使う。
-・INNER JOINを先に記述し、その後にLEFT JOINを記述する。RIGHT JOINは使わない。
-・EXISTS区は１を使う。
-・ORDER BY句、GROUP BY句はカラム名を使う
-
-
-select
-   COLUMN1
-  ,COLUMN2
-  ,COLUMN3
-  ,sum(COLUMN4) as SUM_D
-from
-  TABLE01 as TB1
-  inner join TABLE02 as TB2
-    on  TB1.COLUMN1 = TB2.COLUMN1
-    and TB1.COLUMN2 = TB2.COLUMN2
-    and '1'         = TB2.COLUMN3
-  left join TABLE03 as TB3
-    on  TB1.COLUMN1 = TB3.COLUMN1
-    and TB1.COLUMN2 = TB3.COLUMN2
-where
-      TB1.COLUMN4 = 'A'
-  and TB1.COLUMN5 = 'B'
-  and exists (select 1
-              from 
-                TABLE04 as TB4
-              where
-                    TB1.COLUMN1 = TB4.COLUMN1
-                and '1'         = TB4.COLUMN2)
-group by
-   COLUMN1
-  ,COLUMN2
-  ,COLUMN3
-order by
-   COLUMN1
-  ,COLUMN2
-  ,COLUMN3
-;
+### 【SELECT】  
+・SELECTは全体がごく短い場合は１行で書いても良い。  
+　　例：select A from B where A='1'  
+・全列ワイルドカード「」の使用はせず、カラム名を明記する  
+・別名を定義するときはASをつける。  
+・FROMには複数のテーブル名を並べない。JOINを使う。  
+・INNER JOINを先に記述し、その後にLEFT JOINを記述する。RIGHT JOINは使わない。  
+・EXISTS区は１を使う。  
+・ORDER BY句、GROUP BY句はカラム名を使う  
 
 
-【INSERT】
-insert into
-  TABLE01
-(
- COLUMN1
-,COLUMN2
-,COLUMN3
-)
-values
-(
- VALUE1
-,VALUE2
-,VALUE3
-)
-;
+    select
+       COLUMN1
+      ,COLUMN2
+      ,COLUMN3
+      ,sum(COLUMN4) as SUM_D
+    from
+      TABLE01 as TB1
+      inner join TABLE02 as TB2
+        on  TB1.COLUMN1 = TB2.COLUMN1
+        and TB1.COLUMN2 = TB2.COLUMN2
+        and '1'         = TB2.COLUMN3
+      left join TABLE03 as TB3
+        on  TB1.COLUMN1 = TB3.COLUMN1
+        and TB1.COLUMN2 = TB3.COLUMN2
+    where
+          TB1.COLUMN4 = 'A'
+      and TB1.COLUMN5 = 'B'
+      and exists (select 1
+                  from 
+                    TABLE04 as TB4
+                  where
+                        TB1.COLUMN1 = TB4.COLUMN1
+                    and '1'         = TB4.COLUMN2)
+    group by
+       COLUMN1
+      ,COLUMN2 
+      ,COLUMN3
+    order by
+       COLUMN1
+      ,COLUMN2
+      ,COLUMN3
+    ;
 
 
-【UPDATE】
-UPDATE
-  TABLE01 AS TB1
-SET
-   TB1.COLUMN3 = 100
-  ,TB1.COLUMN4 = 100
-WHERE
-      TB1.COLUMN1 = 10
-  and TB1.COLUMN2 = 20
-;
+### 【INSERT】  
+    insert into
+      TABLE01
+    (
+     COLUMN1
+    ,COLUMN2
+    ,COLUMN3
+    )
+    values
+    (
+     VALUE1
+    ,VALUE2
+    ,VALUE3
+    )
+    ;
 
 
-【DELETE】
-DELETE
-FROM
-  TABLE01 AS TB1
-WHERE
-      TB1.COLUMN1 = 1
-  and TB1.COLUMN2 = 2
-;
+### 【UPDATE】  
+    UPDATE
+      TABLE01 AS TB1
+    SET
+       TB1.COLUMN3 = 100
+      ,TB1.COLUMN4 = 100
+    WHERE
+          TB1.COLUMN1 = 10
+      and TB1.COLUMN2 = 20
+    ;
 
 
-【CREATE】
-・できるだけベンダー固有のデータ型は使用しないようにする。 理由：移植性がないだけでなく、同じベンダーのソフトウェアの古いバージョンでは使用できなくなる可能性がある。
-・数値型はNUMERICとDECIMAL型が望ましい。（浮動小数点が必要な場合のみ）
+### 【DELETE】  
+    DELETE
+    FROM
+      TABLE01 AS TB1
+    WHERE
+          TB1.COLUMN1 = 1
+      and TB1.COLUMN2 = 2
+    ;
 
 
-
-
-【構造】
-・デザイン
+### 【CREATE】  
+・できるだけベンダー固有のデータ型は使用しないようにする。 理由：移植性がないだけでなく、同じベンダーのソフトウェアの古いバージョンでは使用できなくなる可能性がある。  
+・数値型はNUMERICとDECIMAL型が望ましい。（浮動小数点が必要な場合のみ）  
 
 
 
-・フォーマット
-
-
-・
-
-【デザイン規定】
-メソッドは簡潔に、１つの責務に注力するようにすること。40行を越える場合は適切に分割できないか検討すること。
-理由：あああ
-
-
-
-【フォーマット規定】
-一行の長さは極端に長くしないこと。120文字を越える場合は分割した方が読みやすくないか検討すること
-理由：あああ
-良い例：
-悪い例：
-例外：
-
-
-【慣習】
-(C向けスタイルガイドで)「ループ用のインデックスには冗長な名前を避け、i, j, kを順に用いるのが望ましい(SHOULD)」
-
-
-【悪しき遺産】
-使用を禁止する機能を書く。理由も。
-
-
-
-【関連項目／関連文書】
-SQLスタイルガイド　https://www.sqlstyle.guide/ja/
-
-
-
-【フィードバック方法】
-「本スタイルガイドへのフィードバックは git.example.com/issues にissueを立てるか、またはプルリクエストを送付してください」
-
-
-
-
-・フォーマット
 
 
 Note
