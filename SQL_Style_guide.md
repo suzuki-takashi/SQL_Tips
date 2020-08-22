@@ -143,6 +143,7 @@ Note
 
 References
 -------
+[ＳＱＬスタイルガイド](https://www.sqlstyle.guide/ja/)  
 
 
 Contributing
