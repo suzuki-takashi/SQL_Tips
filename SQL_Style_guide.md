@@ -107,18 +107,16 @@
 #### ＩＮＳＥＲＴ
     【サンプル】
     insert into
-      TABLE01
-    (
-     COLUMN1
-    ,COLUMN2
-    ,COLUMN3
-    )
-    values
-    (
-     VALUE1
-    ,VALUE2
-    ,VALUE3
-    )
+      TABLE01 (
+       COLUMN1
+      ,COLUMN2
+      ,COLUMN3
+      )
+    values (
+       VALUE1
+      ,VALUE2
+      ,VALUE3
+      )
     ;
 
 
