@@ -91,7 +91,8 @@
                     TABLE04 as TB4
                   where
                         TB1.COLUMN1 = TB4.COLUMN1
-                    and '1'         = TB4.COLUMN2)
+                    and '1'         = TB4.COLUMN2
+                  )
     group by
        COLUMN1
       ,COLUMN2 
@@ -123,12 +124,12 @@
 
 #### ＵＰＤＡＴＥ 
     【サンプル】
-    UPDATE
+    update
       TABLE01 AS TB1
-    SET
+    set
        TB1.COLUMN3 = 100
       ,TB1.COLUMN4 = 100
-    WHERE
+    where
           TB1.COLUMN1 = 10
       and TB1.COLUMN2 = 20
     ;
@@ -136,10 +137,10 @@
 
 #### ＤＥＬＥＴＥ
     【サンプル】
-    DELETE
-    FROM
+    delete
+    from
       TABLE01 AS TB1
-    WHERE
+    where
           TB1.COLUMN1 = 1
       and TB1.COLUMN2 = 2
     ;
